@@ -58,7 +58,6 @@ export class BookingDetailComponent implements OnInit {
     });
   }
 
-
   hideDeletedBookingMessage() {
     this.showDeleteBookingMessage = false;
   }

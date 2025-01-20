@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -29,16 +29,12 @@ export class UserDetailComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
       const id = params['id'];
-
-      if (!id) return;
-
+      if (!id)
+        return;
 
     const url = 'http://localhost:8080/user/' + id;
 
     this.httpClient.get<User>(url).subscribe(b => this.users = b);
     })
   }
-
-  
-
 }

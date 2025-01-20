@@ -5,16 +5,13 @@ import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { RestaurantType } from '../Interfaces/restaurantType.model';
 import { __values } from 'tslib';
-import { DatePipe } from '@angular/common';
 import { AuthenticationService } from '../services/authentication.service';
-import { combineLatest, delay, switchMap, timer } from 'rxjs';
-
-
+import { switchMap, timer } from 'rxjs';
 
 @Component({
   selector: 'app-restaurant-from',
   standalone: true,
-  imports: [ReactiveFormsModule,RouterLink,DatePipe],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './restaurant-form.component.html',
   styleUrl: './restaurant-form.component.css'
 })
@@ -84,7 +81,6 @@ export class RestaurantFormComponent implements OnInit {
     });
   }
 
-
   onFileChange(event: Event) {
   console.log(event);
     let target = event.target as HTMLInputElement; 
@@ -98,7 +94,6 @@ export class RestaurantFormComponent implements OnInit {
     reader.onload = event => this.photoPreview = reader.result as string;
     reader.readAsDataURL(this.photoFile); 
   }
-
 
   save() {
     const formData = new FormData();
@@ -137,10 +132,6 @@ export class RestaurantFormComponent implements OnInit {
             });
     }
 }
-
-  
-
-  
 
   compareObjects(o1: any, o2: any): boolean{
 
